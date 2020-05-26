@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>产品报价单</title>
+		<script type="text/javascript">
+			(function(win, doc) {
+				if (!win.addEventListener) return;
+				var html = document.documentElement;
+
+				function setFont() {
+					var html = document.documentElement;
+					var k = 750;
+					html.style.fontSize = html.clientWidth / k * 100 + "px";
+				}
+				setFont();
+				setTimeout(function() {
+					setFont();
+				}, 300);
+				doc.addEventListener('DOMContentLoaded', setFont, false);
+				win.addEventListener('load', setFont, false);
+				win.addEventListener('orientationchange', setFont, false);
+				win.addEventListener('resize', setFont, false);
+			})(window, document);
+		</script>
+		<style>
+			*{margin: 0;padding: 0;list-style: none;box-sizing: border-box;font-style: normal;}
+		table{border-collapse:collapse;border-spacing:0}
+		html,body{font-size: 0.24rem;width: 100%;min-height: 100%;}
+		#el{display: none;}
+		.wrap{background: url(./img/canvas-bg.png) no-repeat;background-size: 100% 100%;width: 100%;min-height: 100vh;display: flex;justify-content: center;align-items: center;}
+		.content{background:url(./img/canvas-section.png) no-repeat;background-size: 100% 100%;width: 100%;min-height: 12.06rem;padding:0.7rem 0.9rem 1.5rem 0.9rem;display: flex;flex-direction: column;align-items: center;}
+		.head{
+			margin-top: 0.1rem;
+			padding: 0.3rem 0;
+			width: 100%;
+			border-bottom: 0.02rem solid #21A0E7;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.head .logo{
+			width: 0.68rem;height: 0.68rem;
+			border-radius: 50%;
+		}
+		.head .name{
+			font-size: 0.4rem;
+			font-weight: bold;
+			color: #333;
+			margin-left: 0.23rem;
+		}
+		.title{
+			font-size:0.36rem;
+			font-weight:800;
+			line-height:0.66rem;
+			color:rgba(51,51,51,1);
+			margin-top: 0.24rem;
+		}
+		.table{
+			width: 100%;
+			
+		}
+		.table th{
+			min-height: 0.7rem;
+			font-size:0.26rem;
+			font-weight:400;
+			color: #666;
+			line-height: 1.2;
+			background-color: #FFF6E5;
+			padding: 0.17rem 0.1rem;
+			border: 1px solid #FFF6E5;
+		}
+		.table td{
+			min-height: 0.7rem;
+			font-size:0.24rem;
+			font-weight:400;
+			color: #333333;
+			line-height: 1.2;
+			padding: 0.17rem 0.1rem;
+			text-align: center;
+			border-left: 1px solid #CCCCCC;
+		}
+		.table .tr{
+			border-bottom: 1px solid #CCCCCC;
+			border-right: 1px solid #CCCCCC;
+		}
+		
+		
+		.total{
+			width: 100%;
+			text-align: right;
+			font-size:0.28rem;
+			font-weight:400;
+			line-height:0.4rem;
+			color:rgba(153,153,153,1);
+			margin-top: 0.16rem;
+		}
+		.total em{
+			color: #EE494F;
+			font-weight: bold;
+			margin-left: 0.18rem;
+		}
+		
+		.bidder{
+			font-size:0.28rem ;
+			color: #333;
+			width: 100%;
+			line-height: 1.6;
+			margin-top: 0.25rem;
+		}
+		.note{
+			font-size: 0.24rem;color: #999999;
+			width: 100%;
+			text-align: center;
+			line-height: 1.6;
+			margin-top: 0.5rem;
+		}
+		
+		#result{width: 100%;display: block;position: absolute;top: 0;left: 0;z-index: 9999;}
+	</style>
+	</head>
+	<body>
+		
+		<div id="el">
+			<div class="wrap">
+				<div class="content">
+					<div class="head">
+						<img :src="logo" class="logo" crossorigin="anonymous">
+						<p class="name">{{give_who}}</p>
+					</div>
+					<p class="title">产品报价单</p>
+					<table class="table">
+						<tr>
+							<th>序号</th>
+							<th>{{sku_values}}</th>
+							<th>单位</th>
+							<th>单价</th>
+							<th>数量</th>
+							<th>总额</th>
+						</tr>
+						<tr class="tr" v-for="row in tbody">
+							<td v-for="col in row">{{col}}</td>
+						</tr>
+					</table>
+					<p class="total"><span>金额合计</span><em>{{total_money}}元</em></p>
+					<p class="bidder" style="text-align: left;">
+						联系人：<span>{{bidder_name}}</span>
+						<br />
+						电话：<span>{{bidder_phone}}</span>
+					</p>
+					<p class="bidder" style="text-align: right;">
+						<span>{{unit}}</span>
+						<br />
+						<span>{{createtime}}</span>
+					</p>
+					<p class="note">
+						{{miscellaneous}}
+						<br />
+						{{note}}
+					</p>
+				</div>
+			</div>
+		</div>
+		<img id="result">
+		<div id="postMessage">postMessage</div>
+		<script src="./js/jquery-3.3.1.min.js"></script>
+		<script src="./js/vue.js"></script>
+		<script src="./js/html2canvas.js"></script>
+		<script type="text/javascript" src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
+		<script>
+			// 规格 0
+			// 单位 1
+			// 单价 5
+			// 数量 3
+			// 总额 6
+
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = decodeURIComponent(location.search).substr(1).match(reg);
+				if (r != null) return unescape(r[2]);
+				return null;
+			}
+
+			function createQueryList(obj) {
+				if (!obj) {
+					return ""
+				}
+				var arr = []
+				for (var k in obj) {
+					if (obj[k]) arr.push(k + '=' + obj[k])
+				}
+				return arr;
+			}
+
+			function createQueryString(obj) {
+				var arr = createQueryList(obj);
+				return arr.length ? "?" + arr.join("&") : "";
+			}
+			var _self;
+			document.addEventListener('UniAppJSBridgeReady', function() {
+				document.querySelector("#result").addEventListener('click', function() {
+					uni.postMessage({
+						data: {
+							action: 'message'
+						}
+					});
+				})
+				
+				var app = new Vue({
+					el: "#el",
+					data() {
+						return {
+							give_who: "",
+							logo: "",
+							sku_values: "",
+							tbody: [],
+							total_money: "",
+							bidder_name: "",
+							bidder_phone: "",
+							unit: "",
+							createtime: "",
+							miscellaneous: "",
+							note: ""
+						}
+					},
+					created: function() {
+						_self = this;
+						this.getData()
+					},
+					methods: {
+						getData: function() {
+							$.ajax({
+								type: "POST",
+								url: "http://building.sunmiaoling.xyz/api/make_quote/get_make_values",
+								data: {
+									record_id: getQueryString("id"),
+									token: getQueryString("token")
+								},
+								success: function(res) {
+									var {
+										data,
+										code
+									} = res
+									if (code==1) {
+										_self.give_who = data.give_who;
+										_self.logo = data.logo;
+										_self.sku_values = data.sku_values
+										_self.tbody = data.quote_values.map((item, index) => {
+											return [
+												index + 1,
+												item[0],
+												item[1],
+												item[5],
+												item[3],
+												item[6],
+											]
+										})
+										_self.total_money = data.total_money
+										_self.bidder_name = data.username
+										_self.bidder_phone = data.mobile
+										_self.unit = data.unit
+										_self.createtime = data.createtime
+										_self.miscellaneous = data.miscellaneous
+										_self.note = data.note
+										$("#el").show()
+										setTimeout(function(){
+											html2canvas(document.querySelector("#el"),{
+												useCORS:true
+											}).then(canvas => {
+												var dataURL = canvas.toDataURL();
+												var image = new Image;
+												image.src = dataURL;
+												image.addEventListener("load", function() {
+													$("#result").attr("src", dataURL)
+												}, false)
+											});
+										},30)
+				
+									}
+								},
+								//请求失败，包含具体的错误信息
+								error: function(e) {}
+							});
+						},
+						postMessage(){
+							uni.postMessage({
+								data: {  
+									action: 'postMessage'  
+								}  
+							});  
+						}
+						
+					}
+				})
+			});
+		</script>
+	</body>
+</html>

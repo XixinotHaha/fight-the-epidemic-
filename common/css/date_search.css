@@ -1,0 +1,66 @@
+
+.alarm-all_header {
+	width: 100vw;
+	background-color: #f6f6f6;
+	height: 130upx;
+	padding: 0 32upx;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.alarm-picker_content,
+.alarm-picker_section{
+	flex: 1;
+	height: 70upx;
+}
+.alarm-picker_section{
+	display: flex;
+	justify-content: space-between;
+}
+.aisle {
+	width: 144upx;
+	height: 70upx;
+	background: rgba(255, 255, 255, 1);
+	border: 1px solid rgba(51, 51, 51, 0.2);
+	border-radius: 6upx;
+	display: flex;
+}
+.aisle .aisle-text {
+	flex: 1;
+	font-size: 28upx;
+	color: rgba(153, 153, 153, 1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.aisle .aisle-drop {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 54upx;
+	height: 100%;
+	background: rgba(250, 251, 253, 1);
+	border-left: 1px solid rgba(51, 51, 51, 0.2);
+}
+.aisle .aisle-drop .tria {
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-right: 10upx solid transparent;
+	border-left: 10upx solid transparent;
+	border-top: 10upx solid #707070;
+}
+.btn-sub{
+	display: block;
+	width: 130upx;
+	height: 70upx;
+	border-radius: 6upx;
+	background:rgba(41,153,248,1);
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 70upx;
+	font-size: 32upx;
+	padding: 0;
+	margin-left: 20upx;
+}

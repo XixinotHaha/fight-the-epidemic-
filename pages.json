@@ -1,0 +1,334 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"app-plus": {
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		{
+			"path": "pages/index/trade/trade",
+			"style": {
+				"navigationBarTitleText": "选择语言",
+				"navigationBarBackgroundColor": "#5bced5",
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		{
+			"path": "pages/index/trade/trade_edit",
+			"style": {
+				"navigationBarTitleText": "修改语言",
+				"navigationBarBackgroundColor": "#5bced5",
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		{
+			"path": "pages/index/address/address",
+			"style": {
+				"navigationBarTitleText": "免责声明",
+				"navigationBarBackgroundColor": "#5bced5",
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		{
+			"path": "pages/login/mobile_login",
+			"style": {
+				"navigationBarTitleText": "验证码登录",
+				"app-plus": {
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		{
+			"path": "pages/login/register",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none" //关闭窗口回弹效果
+					
+				}
+			}
+		},
+		{
+			"path": "pages/login/agreenment",
+			"style": {
+				"navigationBarTitleText": "用户协议",
+				"app-plus": {
+					"bounce": "none" ,//关闭窗口回弹效果
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		{
+			"path": "pages/login/resetpassword",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"app-plus": {
+					"bounce": "none" //关闭窗口回弹效果
+				}
+			}
+		},
+		{
+			"path": "pages/login/editpassword",
+			"style": {
+				"navigationBarTitleText": "修改密码",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"app-plus": {
+					"bounce": "none", //关闭窗口回弹效果
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		{
+			"path": "pages/login/bind_account",
+			"style": {
+				"navigationBarTitleText": "绑定新手机",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"app-plus": {
+					"bounce": "none", //关闭窗口回弹效果
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		{
+			"path": "pages/login/verification_account",
+			"style": {
+				"navigationBarTitleText": "验证绑定手机",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"app-plus": {
+					"bounce": "none", //关闭窗口回弹效果
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		{
+			"path": "pages/center/contact",
+			"style": {
+				"navigationBarTitleText": "联系我们",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"bounce": "none" //关闭窗口回弹效果
+				}
+			}
+		},
+		{
+			"path": "pages/center/feedback/feedback",
+			"style": {
+				"navigationBarTitleText": "意见反馈",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/center/about",
+			"style": {
+				"navigationBarTitleText": "关于我们",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/center/user_info",
+			"style": {
+				"navigationBarTitleText": "个人资料",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/center/user_info_input",
+			"style": {
+				"navigationBarTitleText": "基本信息",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/center/upload",
+			"style": {
+				"navigationBarTitleText": "上传头像"
+			}
+		},
+		{
+			"path": "pages/center/upload_input",
+			"style": {
+				"navigationBarTitleText": "基本信息上传头像"
+			}
+		},
+		{
+			"path": "pages/center/message/message",
+			"style": {
+				"navigationBarTitleText": "平台消息",
+				"app-plus": {
+					"bounce": "none", //关闭窗口回弹效果
+					"titleNView": false,//禁用原生导航栏
+					"animationType": "pop-in",
+					"animationDuration": 300
+				}
+			}
+		},
+		{
+			"path": "pages/center/check_basic",
+			"style": {
+				"navigationBarTitleText": "是否存在以下症状",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/index/about_patforml",
+			"style": {
+				"navigationBarTitleText": "关于平台",
+				"navigationBarBackgroundColor": "#5bced5",
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		{
+			"path": "pages/center/message/message_detail",
+			"style": {
+				"navigationBarTitleText": "系统消息详情",
+				"app-plus": {
+					"bounce": "none", //关闭窗口回弹效果
+					"titleNView": false, //禁用原生导航栏
+					"animationType": "pop-in",
+					"animationDuration": 300
+				}
+			}
+		},
+		{
+			"path": "pages/index/detail/case_report",
+			"style": {
+				"navigationBarTitleText": "我的病例",
+				"app-plus": {
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		{
+			"path": "pages/index/detail/banner_detail",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/index/detail/detail",
+			"style": {
+				"navigationBarTitleText": "病例详情",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		}, 
+		{
+			"path": "pages/center/setting/setting",
+			"style": {
+				"navigationBarTitleText": "设置",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		{
+			"path": "pages/index/detail/case_input",
+			"style": {
+				"navigationBarTitleText": "填写化验指标",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false ,//禁用原生导航栏
+					"softinputMode": "adjustPan"
+				}
+			}
+		},
+		{
+			"path": "pages/center/pay/pay",
+			"style": {
+				"navigationBarTitleText": "诊断概率",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		{
+			"path": "pages/index/writequotation/writequotation",
+			"style": {
+				"navigationBarTitleText": "我要邀请好友",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		},
+		// 
+
+
+
+		{
+			"path": "pages/center/center",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"titleNView": false,
+					"bounce": "none",
+					"statusbar": {
+						"immersed": false
+					}
+				}
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "**医院",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF",
+		"app-plus": {
+			"softinputNavBar": "none", //iOS软键盘上完成工具栏的显示模式，设置为 "none" 时关闭工具栏。
+			"scrollIndicator": "none", //滚动条显示策略，设置为 "none" 时不显示滚动条。
+			"softinputMode": "adjustPan", //软键盘弹出模式，支持 adjustResize、adjustPan 两种模式
+			"bounce": "none"
+		}
+	},
+	"tabBar": {
+		"color": "#BFBFBF",
+		"selectedColor": "rgba(153,153,153,1)",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabbar/index.png",
+				"selectedIconPath": "static/tabbar/index_active.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/center/center",
+				"iconPath": "static/tabbar/me.png",
+				"selectedIconPath": "static/tabbar/me_active.png",
+				"text": "个人中心"
+			}
+		]
+	}
+}

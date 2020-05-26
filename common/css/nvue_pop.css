@@ -1,0 +1,65 @@
+/* 提示窗口 */
+.nvue-popup {
+	top: 0;
+	left: 0;
+	position: fixed;
+	width: 750upx;
+	height: 1334upx;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+	align-items: center;
+	justify-content: center;
+}
+.uni-tip {
+	padding: 15px;
+	width: 300px;
+	background-color: #fff;
+	border-radius: 10px;
+	z-index: 99;
+}
+
+.uni-tip-title {
+	align-items: center;
+}
+.uni-tip-title_text {
+	font-weight: bold;
+	font-size: 16px;
+	color: #333;
+}
+
+.uni-tip-content {
+	padding: 15px;
+	border-bottom-width: 1px;
+	border-bottom-color: #E5E5E5;
+	
+}
+.pop-tip-row{
+	padding: 10upx 10upx;
+	flex-direction: row;
+}
+.uni-tip-content_text {
+	font-size: 14px;
+	color: #666;
+}
+.pop-tip-row_key{
+	width: 120upx;
+	text-align: right;
+}
+.pop-tip-row_value{
+	margin-left: 10upx;
+}
+.uni-tip-group-button {
+	margin-top: 10px;
+	flex-direction: row;
+}
+.uni-tip-button {
+	flex: 0.5;
+	width: 50%;
+	align-items: center;
+	justify-content: center;
+}
+.uni-tip-button_text {
+	flex: 0.5;
+	font-size: 14px;
+	color: #3b4144;
+}

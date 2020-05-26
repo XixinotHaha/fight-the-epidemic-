@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style>
+				*{margin: 0;padding: 0;list-style: none;box-sizing: border-box;font-style: normal;}
+			table{border-collapse:collapse;border-spacing:0}
+			html,body{font-size: 0.24rem;width: 100%;min-height: 100%;}
+			#el{display: none;}
+			.wrap{background: url(./img/canvas-bg.png) no-repeat;background-size: 100% 100%;width: 100%;min-height: 100vh;display: flex;justify-content: center;align-items: center;}
+			.content{background:url(./img/canvas-section.png) no-repeat;background-size: 100% 100%;width: 100%;min-height: 12.06rem;padding:0.7rem 0.9rem 1.5rem 0.9rem;display: flex;flex-direction: column;align-items: center;}
+			.head{
+				margin-top: 0.1rem;
+				padding: 0.3rem 0;
+				width: 100%;
+				border-bottom: 0.02rem solid #21A0E7;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.head .logo{
+				width: 0.68rem;height: 0.68rem;
+				border-radius: 50%;
+			}
+			.head .name{
+				font-size: 0.4rem;
+				font-weight: bold;
+				color: #333;
+				margin-left: 0.23rem;
+			}
+			.title{
+				font-size:0.36rem;
+				font-weight:800;
+				line-height:0.66rem;
+				color:rgba(51,51,51,1);
+				margin-top: 0.24rem;
+			}
+			.table{
+				width: 100%;
+				
+			}
+			.table th{
+				min-height: 0.7rem;
+				font-size:0.26rem;
+				font-weight:400;
+				color: #666;
+				line-height: 1.2;
+				background-color: #FFF6E5;
+				padding: 0.17rem 0.1rem;
+				border: 1px solid #FFF6E5;
+			}
+			.table td{
+				min-height: 0.7rem;
+				font-size:0.24rem;
+				font-weight:400;
+				color: #333333;
+				line-height: 1.2;
+				padding: 0.17rem 0.1rem;
+				text-align: center;
+				border-left: 1px solid #CCCCCC;
+			}
+			.table .tr{
+				border-bottom: 1px solid #CCCCCC;
+				border-right: 1px solid #CCCCCC;
+			}
+			
+			
+			.total{
+				width: 100%;
+				text-align: right;
+				font-size:0.28rem;
+				font-weight:400;
+				line-height:0.4rem;
+				color:rgba(153,153,153,1);
+				margin-top: 0.16rem;
+			}
+			.total em{
+				color: #EE494F;
+				font-weight: bold;
+				margin-left: 0.18rem;
+			}
+			
+			.bidder{
+				font-size:0.28rem ;
+				color: #333;
+				width: 100%;
+				line-height: 1.6;
+				margin-top: 0.25rem;
+			}
+			.note{
+				font-size: 0.24rem;color: #999999;
+				width: 100%;
+				text-align: center;
+				line-height: 1.6;
+				margin-top: 0.5rem;
+			}
+			
+			#result{width: 100%;display: block;position: absolute;top: 0;left: 0;z-index: 9999;}
+		</style>
+	</head>
+	<body>
+		<div class="btn-list">
+			<button class="btn btn-red" type="button" id="postMessage">postMessage</button>
+		</div>
+		<!-- uni 的 SDK -->
+		<script type="text/javascript" src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
+		<script type="text/javascript">
+			document.addEventListener('UniAppJSBridgeReady', function() {
+				// document.querySelector('.btn-list').addEventListener('click', function(evt) {
+				// 	var target = evt.target;
+				// 	if (target.tagName === 'BUTTON') {
+				// 		var action = target.getAttribute('data-action');
+				// 		switch (action) {
+				// 			case 'switchTab':
+				// 				uni.switchTab({
+				// 					url: '/pages/tabBar/API/API'
+				// 				});
+				// 				break;
+				// 			case 'reLaunch':
+				// 				uni.reLaunch({
+				// 					url: '/pages/tabBar/API/API'
+				// 				});
+				// 				break;
+				// 			case 'navigateBack':
+				// 				uni.navigateBack({
+				// 					delta: 1
+				// 				});
+				// 				break;
+				// 			default:
+				// 				uni[action]({
+				// 					url: '/pages/component/button/button'
+				// 				});
+				// 				break;
+				// 		}
+				// 	}
+				// });
+				document.querySelector("#postMessage").addEventListener('click', function() {
+					uni.postMessage({
+						data: {
+							action: 'message'
+						}
+					});
+				})
+			});
+		</script>
+	</body>
+</html>
